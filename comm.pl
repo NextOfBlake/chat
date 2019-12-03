@@ -58,17 +58,17 @@ request.onreadystatechange = function(){
 }
     </script>
 
-    <form name=form1 align="center">
-    <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
-    <input type=hidden name=name value="$input{'name'}">
-    <input type=hidden name=company value="$input{'companyname'}">
-    <input type=hidden name=email value="$input{'email'}">
-    <input type=hidden name=random value="$input{'random'}">
-    <textarea name=display rows=40 cols=70></textarea><br>
-    <br><br>
-    <textarea name=in rows=10 cols=70></textarea><br>
-    Message to send:<br>
-    <input type=button onclick="trans()" value="Send">
+    <form name=form1 class="align-center">
+        <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
+        <input type=hidden name=name value="$input{'name'}">
+        <input type=hidden name=company value="$input{'companyname'}">
+        <input type=hidden name=email value="$input{'email'}">
+        <input type=hidden name=random value="$input{'random'}">
+        <textarea name=display rows=40 cols=70></textarea><br>
+        <br><br>
+        <textarea name=in rows=10 cols=70></textarea><br>
+        Message to send:<br>
+        <input type=button onclick="trans()" value="Send">
     </form>
 </body>
 </html>
