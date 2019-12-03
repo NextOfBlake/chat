@@ -1,0 +1,15 @@
+body {
+    background-color: gainsboro;
+    color: black;
+}
+textarea{
+    background-color: lavender;
+    color: lightslategray;
+    font-family: helvetica;
+}
+
+.align-center {
+    margin: auto;
+    width: 25vw;
+    display: grid;
+}
