@@ -8,7 +8,7 @@ MAIN:
         open(INFO, "Information");
 
         print qq(Content-Type: text/html; charset=utf-8;\n\n
-        <html><head><link rel="stylesheet" type="text/css" href="stylesheet.css"><meta charset="utf-8"></head><body>);
+        <html><head><link rel="stylesheet" type="text/css" href="stylesheet.css"><meta charset="utf-8"></head><body style="grid-gap: 5px" class="aligncenter">);
 
         $/="\n";
         while($info = <INFO>){

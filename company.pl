@@ -6,7 +6,7 @@ MAIN:
 {   if(&ReadParse(*input))
     {
         open(INFO, "+<", "Information");        
-        $login = 1;
+        $login = 0;
         while(my $line = <INFO>) 
         {
             @account = ();
@@ -22,7 +22,7 @@ MAIN:
             $email = @account[2];
             $random = @account[3];
 
-            if ($company eq $input{'companyname'})
+            if ($company eq $input{'companyname'} && $name eq $input{'name'})
             {
                 $login = 1;
                 last;
@@ -52,7 +52,7 @@ Content-type: text/html, charset=utf8;
             <a href="totalkto.htm">Client</a>
     </div>
     <div class="content">
-        <form name=form1 class="align-center">
+        <form name=form1 class="aligncenter">
             <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
             <input type=hidden name=name value="$name">
             <input type=hidden name=company value="$company">

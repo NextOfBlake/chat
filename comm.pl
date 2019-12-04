@@ -22,7 +22,7 @@ Content-type: text/html; charset=utf8;
             <a href="totalkto.htm">Client</a>
     </div>
     <div class="content">
-        <form name=form1 class="align-center">
+        <form name=form1 class="aligncenter">
             <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
             <input type=hidden name=name value="$input{'name'}">
             <input type=hidden name=company value="$input{'company'}">
