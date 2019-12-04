@@ -61,7 +61,7 @@ request.onreadystatechange = function(){
     <form name=form1 class="align-center">
         <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
         <input type=hidden name=name value="$input{'name'}">
-        <input type=hidden name=company value="$input{'companyname'}">
+        <input type=hidden name=company value="$input{'company'}">
         <input type=hidden name=email value="$input{'email'}">
         <input type=hidden name=random value="$input{'random'}">
         <textarea name=display rows=40 cols=70></textarea><br>
