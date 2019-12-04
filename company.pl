@@ -17,6 +17,26 @@ Content-type: text/html, charset=utf8;
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
+    <div class="navbar">
+            <a href="company.htm">Host</a>
+            <a href="totalkto.htm">Client</a>
+    </div>
+    <div class="content">
+        <form name=form1 class="align-center">
+            <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
+            <input type=hidden name=name value="$input{'name'}">
+            <input type=hidden name=company value="$input{'companyname'}">
+            <input type=hidden name=email value="$input{'email'}">
+            <input type=hidden name=random value="$random">
+            <textarea name=display rows=40 cols=70></textarea><br>
+            <br><br>
+            <textarea name=in rows=10 cols=70></textarea><br>
+            Message to send:<br>
+            <input type=button onclick="trans()" value="Send">
+        </form>
+    </div>
+
+
     <script language=Javascript>
         if(window.XMLHttpRequest){
                 request=new XMLHttpRequest();
@@ -44,7 +64,6 @@ Content-type: text/html, charset=utf8;
             request.send( "name=" + document.form1.name.value
                 + "&company=" + document.form1.company.value
                 + "&email=" + document.form1.email.value
-                + "&random=" + document.form1.random.value
                 + "&msg=" + document.form1.in.value);
                 
             request.onreadystatechange = function(){
@@ -57,19 +76,6 @@ Content-type: text/html, charset=utf8;
             }
         }
     </script>
-
-    <form name=form1 class="align-center">
-        <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
-        <input type=hidden name=name value="$input{'name'}">
-        <input type=hidden name=company value="$input{'companyname'}">
-        <input type=hidden name=email value="$input{'email'}">
-        <input type=hidden name=random value="$random">
-        <textarea name=display rows=40 cols=70></textarea><br>
-        <br><br>
-        <textarea name=in rows=10 cols=70></textarea><br>
-        Message to send:<br>
-        <input type=button onclick="trans()" value="Send">
-    </form>
 </body>
 </html>
 ABCDEF
