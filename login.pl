@@ -4,39 +4,9 @@ require "cgi-lib.pl";
 
 MAIN:
 {   if(&ReadParse(*input))
-    {
-        open(INFO, "+<", "Information");        
-        $login = 1;
-        while(my $line = <INFO>) 
-        {
-            @account = ();
-
-            @split = split /;/ , $line;
-            foreach(@split)
-            {
-                @value = split /=/ , $_;
-                push(@account, (@value[1]));
-            }
-            $company = @account[0];
-            $name = @account[1];
-            $email = @account[2];
-            $random = @account[3];
-
-            if ($company eq $input{'companyname'})
-            {
-                $login = 1;
-                last;
-            }
-        }
-        if($login == 0)
-        {
-            $company = $input{'companyname'};
-            $name = $input{'name'};
-            $email = $input{'email'};
-            $random = rand;
-            print INFO "Company=$company; Name=$name; Email=$email; Random=$random\n";
-        }
-
+    {   $random=rand;
+        open(INFO, "+<", "Information");
+    
         close(INFO);
     print<<ABCDEF;
 Content-type: text/html, charset=utf8;
@@ -54,9 +24,9 @@ Content-type: text/html, charset=utf8;
     <div class="content">
         <form name=form1 class="align-center">
             <div style="font-size: larger; font-weight: bold;">Message Transcript:</div> 
-            <input type=hidden name=name value="$name">
-            <input type=hidden name=company value="$company">
-            <input type=hidden name=email value="$email">
+            <input type=hidden name=name value="$input{'name'}">
+            <input type=hidden name=company value="$input{'companyname'}">
+            <input type=hidden name=email value="$input{'email'}">
             <input type=hidden name=random value="$random">
             <textarea name=display rows=40 cols=70></textarea><br>
             <br><br>
@@ -94,7 +64,6 @@ Content-type: text/html, charset=utf8;
             request.send( "name=" + document.form1.name.value
                 + "&company=" + document.form1.company.value
                 + "&email=" + document.form1.email.value
-                + "&random=" + document.form1.random.value
                 + "&msg=" + document.form1.in.value);
                 
             request.onreadystatechange = function(){
