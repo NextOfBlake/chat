@@ -29,7 +29,11 @@ Content-type: text/html, charset=utf8;
             request.send("");
             request.onreadystatechange = function(){
                 if(request.readyState == 4 ){
-                    document.form1.display.value = request.responseText;
+                    document.form1.display.value = request.responseText.split('Company=')
+                    .filter(msg => msg.startsWith(document.form1.company.value))
+                    .map(msg => 'Company=' + msg).join('\\n');
+                } else {
+                    // alert("Error" + request.status+ ": " + request.statustText);
                 }
             }
         }, 1000);
