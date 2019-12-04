@@ -8,8 +8,18 @@ textarea{
     font-family: helvetica;
 }
 
-.align-center {
+.aligncenter {
     margin: auto;
     width: 25vw;
     display: grid;
+}
+
+.navbar {
+    background-color: white;
+    color: black;
+    font-family: helvetica;
+}
+
+.navbar > a {
+    padding: 10px;
 }
